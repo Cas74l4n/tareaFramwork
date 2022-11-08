@@ -64,3 +64,11 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Instalacion de Laravell
+
+Para la instalacion es neceserario ver echo una copia y luego en los comandos Escribir este codigo
+```bash
+npm install
+```
+
