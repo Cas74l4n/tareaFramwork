@@ -1,5 +1,5 @@
 <?php
-
+//Table predeterminda por PHP 
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
