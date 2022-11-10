@@ -5,11 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class HorarioClase extends Model
+class Alumnos extends Model
 {
     use HasFactory;
-    public function clase()
-    {
-        return $this->hasMany(Clase::class, 'id');
-    }
 }

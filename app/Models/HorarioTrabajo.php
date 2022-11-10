@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class HorarioTrabajo extends Model
 {
     use HasFactory;
+    public function maestro()
+    {
+        return $this->hasMany(Maestro::class, 'id');
+    }
 }
