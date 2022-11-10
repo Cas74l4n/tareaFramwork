@@ -69,6 +69,11 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 Para la instalacion es neceserario ver echo una copia y luego en los comandos Escribir este codigo
 ```bash
+composer install
+```
+y luego instalar npm
+```bash
 npm install
 ```
+
 
