@@ -1,4 +1,15 @@
 <?php return array (
+  'flightsadmin/livewire-crud' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Flightsadmin\\LivewireCrud\\LivewireCrudServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'LivewireCrud' => 'Flightsadmin\\LivewireCrud\\LivewireCrudFacade',
+    ),
+  ),
   'laravel/sail' => 
   array (
     'providers' => 
@@ -25,6 +36,17 @@
     'providers' => 
     array (
       0 => 'Laravel\\Ui\\UiServiceProvider',
+    ),
+  ),
+  'livewire/livewire' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Livewire\\LivewireServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Livewire' => 'Livewire\\Livewire',
     ),
   ),
   'nesbot/carbon' => 
