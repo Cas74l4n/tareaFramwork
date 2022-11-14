@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 namespace App\Models;
 
@@ -7,9 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class HorarioClase extends Model
 {
-    use HasFactory;
-    public function clase()
-    {
-        return $this->hasMany(Clase::class, 'id');
-    }
+	use HasFactory;
+	
+    public $timestamps = true;
+
+    protected $table = 'horarioClases';
+
+    protected $fillable = ['DiaSemana','HoraDeInicio','HoraFin'];
+	
 }

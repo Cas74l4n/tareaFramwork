@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 namespace App\Models;
 
@@ -7,21 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Clase extends Model
 {
-    use HasFactory;
-    public function maestro()
-    {
-        return $this->belongsTo(Maestro::class, 'id_Maestro');
-    }
-    public function alumnos()
-    {
-        return $this->belongsTo(Alumno::class, 'id_Alumno');
-    }
-    public function horario_clase()
-    {
-        return $this->belongsTo(HorarioClase::class, 'id_HoarioClase');
-    }
-    public function asistencia()
-    {
-        return $this->belongsTo(Asistencia::class, 'id_Asistencia');
-    }
+	use HasFactory;
+	
+    public $timestamps = true;
+
+    protected $table = 'clases';
+
+    protected $fillable = ['HoraSemana','id_Maestro','id_Alumno','id_HorarioClase','id_Asistencia'];
+	
 }
