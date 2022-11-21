@@ -14,5 +14,10 @@ class Disiplina extends Model
     protected $table = 'disiplinas';
 
     protected $fillable = ['Nombre'];
+
+    public function maestros()
+    {
+        return $this->hasMany(Maestro::class, 'id');
+    }
 	
 }

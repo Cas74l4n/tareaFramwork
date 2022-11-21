@@ -11,7 +11,7 @@ class Clases extends Component
     use WithPagination;
 
 	protected $paginationTheme = 'bootstrap';
-    public $selected_id, $keyWord, $HoraSemana, $id_Maestro, $id_Alumno, $id_HorarioClase, $id_Asistencia;
+    public $selected_id, $keyWord, $HoraSemana, $id_maestro, $id_alumno, $id_hclase, $id_asistencia;
     public $updateMode = false;
 
     public function render()
@@ -20,10 +20,10 @@ class Clases extends Component
         return view('livewire.clases.view', [
             'clases' => Clase::latest()
 						->orWhere('HoraSemana', 'LIKE', $keyWord)
-						->orWhere('id_Maestro', 'LIKE', $keyWord)
-						->orWhere('id_Alumno', 'LIKE', $keyWord)
-						->orWhere('id_HorarioClase', 'LIKE', $keyWord)
-						->orWhere('id_Asistencia', 'LIKE', $keyWord)
+						->orWhere('id_maestro', 'LIKE', $keyWord)
+						->orWhere('id_alumno', 'LIKE', $keyWord)
+						->orWhere('id_hclase', 'LIKE', $keyWord)
+						->orWhere('id_asistencia', 'LIKE', $keyWord)
 						->paginate(10),
         ]);
     }
@@ -37,28 +37,24 @@ class Clases extends Component
     private function resetInput()
     {		
 		$this->HoraSemana = null;
-		$this->id_Maestro = null;
-		$this->id_Alumno = null;
-		$this->id_HorarioClase = null;
-		$this->id_Asistencia = null;
+		$this->id_maestro = null;
+		$this->id_alumno = null;
+		$this->id_hclase = null;
+		$this->id_asistencia = null;
     }
 
     public function store()
     {
         $this->validate([
 		'HoraSemana' => 'required',
-		'id_Maestro' => 'required',
-		'id_Alumno' => 'required',
-		'id_HorarioClase' => 'required',
-		'id_Asistencia' => 'required',
         ]);
 
         Clase::create([ 
 			'HoraSemana' => $this-> HoraSemana,
-			'id_Maestro' => $this-> id_Maestro,
-			'id_Alumno' => $this-> id_Alumno,
-			'id_HorarioClase' => $this-> id_HorarioClase,
-			'id_Asistencia' => $this-> id_Asistencia
+			'id_maestro' => $this-> id_maestro,
+			'id_alumno' => $this-> id_alumno,
+			'id_hclase' => $this-> id_hclase,
+			'id_asistencia' => $this-> id_asistencia
         ]);
         
         $this->resetInput();
@@ -72,10 +68,10 @@ class Clases extends Component
 
         $this->selected_id = $id; 
 		$this->HoraSemana = $record-> HoraSemana;
-		$this->id_Maestro = $record-> id_Maestro;
-		$this->id_Alumno = $record-> id_Alumno;
-		$this->id_HorarioClase = $record-> id_HorarioClase;
-		$this->id_Asistencia = $record-> id_Asistencia;
+		$this->id_maestro = $record-> id_maestro;
+		$this->id_alumno = $record-> id_alumno;
+		$this->id_hclase = $record-> id_hclase;
+		$this->id_asistencia = $record-> id_asistencia;
 		
         $this->updateMode = true;
     }
@@ -84,20 +80,16 @@ class Clases extends Component
     {
         $this->validate([
 		'HoraSemana' => 'required',
-		'id_Maestro' => 'required',
-		'id_Alumno' => 'required',
-		'id_HorarioClase' => 'required',
-		'id_Asistencia' => 'required',
         ]);
 
         if ($this->selected_id) {
 			$record = Clase::find($this->selected_id);
             $record->update([ 
 			'HoraSemana' => $this-> HoraSemana,
-			'id_Maestro' => $this-> id_Maestro,
-			'id_Alumno' => $this-> id_Alumno,
-			'id_HorarioClase' => $this-> id_HorarioClase,
-			'id_Asistencia' => $this-> id_Asistencia
+			'id_maestro' => $this-> id_maestro,
+			'id_alumno' => $this-> id_alumno,
+			'id_hclase' => $this-> id_hclase,
+			'id_asistencia' => $this-> id_asistencia
             ]);
 
             $this->resetInput();

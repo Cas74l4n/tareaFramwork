@@ -11,7 +11,7 @@ class Asistencias extends Component
     use WithPagination;
 
 	protected $paginationTheme = 'bootstrap';
-    public $selected_id, $keyWord, $id_Clase, $id_Alumno, $id_Maestro;
+    public $selected_id, $keyWord, $id_clase, $id_alumno, $id_maestro;
     public $updateMode = false;
 
     public function render()
@@ -19,9 +19,9 @@ class Asistencias extends Component
 		$keyWord = '%'.$this->keyWord .'%';
         return view('livewire.asistencias.view', [
             'asistencias' => Asistencia::latest()
-						->orWhere('id_Clase', 'LIKE', $keyWord)
-						->orWhere('id_Alumno', 'LIKE', $keyWord)
-						->orWhere('id_Maestro', 'LIKE', $keyWord)
+						->orWhere('id_clase', 'LIKE', $keyWord)
+						->orWhere('id_alumno', 'LIKE', $keyWord)
+						->orWhere('id_maestro', 'LIKE', $keyWord)
 						->paginate(10),
         ]);
     }
@@ -34,23 +34,23 @@ class Asistencias extends Component
 	
     private function resetInput()
     {		
-		$this->id_Clase = null;
-		$this->id_Alumno = null;
-		$this->id_Maestro = null;
+		$this->id_clase = null;
+		$this->id_alumno = null;
+		$this->id_maestro = null;
     }
 
     public function store()
     {
         $this->validate([
-		'id_Clase' => 'required',
-		'id_Alumno' => 'required',
-		'id_Maestro' => 'required',
+		'id_clase' => 'required',
+		'id_alumno' => 'required',
+		'id_maestro' => 'required',
         ]);
 
         Asistencia::create([ 
-			'id_Clase' => $this-> id_Clase,
-			'id_Alumno' => $this-> id_Alumno,
-			'id_Maestro' => $this-> id_Maestro
+			'id_clase' => $this-> id_clase,
+			'id_alumno' => $this-> id_alumno,
+			'id_maestro' => $this-> id_maestro
         ]);
         
         $this->resetInput();
@@ -63,9 +63,9 @@ class Asistencias extends Component
         $record = Asistencia::findOrFail($id);
 
         $this->selected_id = $id; 
-		$this->id_Clase = $record-> id_Clase;
-		$this->id_Alumno = $record-> id_Alumno;
-		$this->id_Maestro = $record-> id_Maestro;
+		$this->id_clase = $record-> id_clase;
+		$this->id_alumno = $record-> id_alumno;
+		$this->id_maestro = $record-> id_maestro;
 		
         $this->updateMode = true;
     }
@@ -73,17 +73,17 @@ class Asistencias extends Component
     public function update()
     {
         $this->validate([
-		'id_Clase' => 'required',
-		'id_Alumno' => 'required',
-		'id_Maestro' => 'required',
+		'id_clase' => 'required',
+		'id_alumno' => 'required',
+		'id_maestro' => 'required',
         ]);
 
         if ($this->selected_id) {
 			$record = Asistencia::find($this->selected_id);
             $record->update([ 
-			'id_Clase' => $this-> id_Clase,
-			'id_Alumno' => $this-> id_Alumno,
-			'id_Maestro' => $this-> id_Maestro
+			'id_clase' => $this-> id_clase,
+			'id_alumno' => $this-> id_alumno,
+			'id_maestro' => $this-> id_maestro
             ]);
 
             $this->resetInput();

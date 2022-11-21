@@ -31,7 +31,7 @@ class Disiplinas extends Component
     }
 	
     private function resetInput()
-    {		
+    {
 		$this->Nombre = null;
     }
 
@@ -41,7 +41,7 @@ class Disiplinas extends Component
 		'Nombre' => 'required',
         ]);
 
-        Disiplina::create([ 
+        Disiplina::create([
 			'Nombre' => $this-> Nombre
         ]);
         
@@ -54,7 +54,7 @@ class Disiplinas extends Component
     {
         $record = Disiplina::findOrFail($id);
 
-        $this->selected_id = $id; 
+        $this->selected_id = $id;
 		$this->Nombre = $record-> Nombre;
 		
         $this->updateMode = true;
@@ -68,7 +68,7 @@ class Disiplinas extends Component
 
         if ($this->selected_id) {
 			$record = Disiplina::find($this->selected_id);
-            $record->update([ 
+            $record->update([
 			'Nombre' => $this-> Nombre
             ]);
 

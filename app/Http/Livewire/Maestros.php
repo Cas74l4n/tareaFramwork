@@ -11,7 +11,7 @@ class Maestros extends Component
     use WithPagination;
 
 	protected $paginationTheme = 'bootstrap';
-    public $selected_id, $keyWord, $Nombre, $Celular, $id_Disiplina, $id_HorarioTrabajo;
+    public $selected_id, $keyWord, $Nombre, $Celular, $id_disiplina, $id_horario_trabajo;
     public $updateMode = false;
 
     public function render()
@@ -21,8 +21,8 @@ class Maestros extends Component
             'maestros' => Maestro::latest()
 						->orWhere('Nombre', 'LIKE', $keyWord)
 						->orWhere('Celular', 'LIKE', $keyWord)
-						->orWhere('id_Disiplina', 'LIKE', $keyWord)
-						->orWhere('id_HorarioTrabajo', 'LIKE', $keyWord)
+						->orWhere('id_disiplina', 'LIKE', $keyWord)
+						->orWhere('id_horario_trabajo', 'LIKE', $keyWord)
 						->paginate(10),
         ]);
     }
@@ -37,8 +37,8 @@ class Maestros extends Component
     {		
 		$this->Nombre = null;
 		$this->Celular = null;
-		$this->id_Disiplina = null;
-		$this->id_HorarioTrabajo = null;
+		$this->id_disiplina = null;
+		$this->id_horario_trabajo = null;
     }
 
     public function store()
@@ -46,15 +46,13 @@ class Maestros extends Component
         $this->validate([
 		'Nombre' => 'required',
 		'Celular' => 'required',
-		'id_Disiplina' => 'required',
-		'id_HorarioTrabajo' => 'required',
         ]);
 
         Maestro::create([ 
 			'Nombre' => $this-> Nombre,
 			'Celular' => $this-> Celular,
-			'id_Disiplina' => $this-> id_Disiplina,
-			'id_HorarioTrabajo' => $this-> id_HorarioTrabajo
+			'id_disiplina' => $this-> id_disiplina,
+			'id_horario_trabajo' => $this-> id_horario_trabajo
         ]);
         
         $this->resetInput();
@@ -69,8 +67,8 @@ class Maestros extends Component
         $this->selected_id = $id; 
 		$this->Nombre = $record-> Nombre;
 		$this->Celular = $record-> Celular;
-		$this->id_Disiplina = $record-> id_Disiplina;
-		$this->id_HorarioTrabajo = $record-> id_HorarioTrabajo;
+		$this->id_disiplina = $record-> id_disiplina;
+		$this->id_horario_trabajo = $record-> id_horario_trabajo;
 		
         $this->updateMode = true;
     }
@@ -80,8 +78,6 @@ class Maestros extends Component
         $this->validate([
 		'Nombre' => 'required',
 		'Celular' => 'required',
-		'id_Disiplina' => 'required',
-		'id_HorarioTrabajo' => 'required',
         ]);
 
         if ($this->selected_id) {
@@ -89,8 +85,8 @@ class Maestros extends Component
             $record->update([ 
 			'Nombre' => $this-> Nombre,
 			'Celular' => $this-> Celular,
-			'id_Disiplina' => $this-> id_Disiplina,
-			'id_HorarioTrabajo' => $this-> id_HorarioTrabajo
+			'id_disiplina' => $this-> id_disiplina,
+			'id_horario_trabajo' => $this-> id_horario_trabajo
             ]);
 
             $this->resetInput();
