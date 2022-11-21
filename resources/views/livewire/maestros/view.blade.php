@@ -35,26 +35,26 @@
 								<th>Nombre</th>
 								<th>Celular</th>
 								<th>Id Disiplina</th>
-								<th>Id Horariotrabajo</th>
+								<th>Id Horario Trabajo</th>
 								<td>ACTIONS</td>
 							</tr>
 						</thead>
 						<tbody>
 							@foreach($maestros as $row)
 							<tr>
-								<td>{{ $loop->iteration }}</td> 
+								<td>{{ $loop->iteration }}</td>
 								<td>{{ $row->Nombre }}</td>
 								<td>{{ $row->Celular }}</td>
-								<td>{{ $row->id_Disiplina }}</td>
-								<td>{{ $row->id_HorarioTrabajo }}</td>
+								<td>{{ $row->id_disiplina }}</td>
+								<td>{{ $row->id_htrabajo }}</td>
 								<td width="90">
 								<div class="btn-group">
 									<button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 									Actions
 									</button>
 									<div class="dropdown-menu dropdown-menu-right">
-									<a data-toggle="modal" data-target="#updateModal" class="dropdown-item" wire:click="edit({{$row->id}})"><i class="fa fa-edit"></i> Edit </a>							 
-									<a class="dropdown-item" onclick="confirm('Confirm Delete Maestro id {{$row->id}}? \nDeleted Maestros cannot be recovered!')||event.stopImmediatePropagation()" wire:click="destroy({{$row->id}})"><i class="fa fa-trash"></i> Delete </a>   
+									<a data-toggle="modal" data-target="#updateModal" class="dropdown-item" wire:click="edit({{$row->id}})"><i class="fa fa-edit"></i> Edit </a>
+									<a class="dropdown-item" onclick="confirm('Confirm Delete Maestro id {{$row->id}}? \nDeleted Maestros cannot be recovered!')||event.stopImmediatePropagation()" wire:click="destroy({{$row->id}})"><i class="fa fa-trash"></i> Delete </a>
 									</div>
 								</div>
 								</td>

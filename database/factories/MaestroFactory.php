@@ -15,8 +15,8 @@ class MaestroFactory extends Factory
         return [
 			'Nombre' => $this->faker->name,
 			'Celular' => $this->faker->name,
-			'id_Disiplina' => $this->faker->name,
-			'id_HorarioTrabajo' => $this->faker->name,
+			'id_disiplina' => $this->faker->name,
+			'id_horario_trabajo' => $this->faker->name,
         ];
     }
 }

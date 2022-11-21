@@ -35,7 +35,7 @@
 								<th>Horasemana</th>
 								<th>Id Maestro</th>
 								<th>Id Alumno</th>
-								<th>Id Horarioclase</th>
+								<th>Id Hclase</th>
 								<th>Id Asistencia</th>
 								<td>ACTIONS</td>
 							</tr>
@@ -45,10 +45,10 @@
 							<tr>
 								<td>{{ $loop->iteration }}</td> 
 								<td>{{ $row->HoraSemana }}</td>
-								<td>{{ $row->id_Maestro }}</td>
-								<td>{{ $row->id_Alumno }}</td>
-								<td>{{ $row->id_HorarioClase }}</td>
-								<td>{{ $row->id_Asistencia }}</td>
+								<td>{{ $row->id_maestro }}</td>
+								<td>{{ $row->id_alumno }}</td>
+								<td>{{ $row->id_hclase }}</td>
+								<td>{{ $row->id_asistencia }}</td>
 								<td width="90">
 								<div class="btn-group">
 									<button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

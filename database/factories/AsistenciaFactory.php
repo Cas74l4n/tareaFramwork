@@ -13,9 +13,9 @@ class AsistenciaFactory extends Factory
     public function definition()
     {
         return [
-			'id_Clase' => $this->faker->name,
-			'id_Alumno' => $this->faker->name,
-			'id_Maestro' => $this->faker->name,
+			'id_clase' => $this->faker->name,
+			'id_alumno' => $this->faker->name,
+			'id_maestro' => $this->faker->name,
         ];
     }
 }

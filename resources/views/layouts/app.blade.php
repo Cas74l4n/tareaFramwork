@@ -37,25 +37,25 @@
                     <ul class="navbar-nav mr-auto">
 						<!--Nav Bar Hooks - Do not delete!!-->
 						<li class="nav-item">
-                            <a href="{{ url('/maestros') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Maestros</a> 
+                            <a href="{{ url('/htrabajos') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Horario de trabajos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url('/maestros') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Maestros</a>
                         </li>
 						<li class="nav-item">
-                            <a href="{{ url('/horario_trabajos') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Horario_trabajos</a> 
+                            <a href="{{ url('/asistencias') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Asistencias</a>
                         </li>
 						<li class="nav-item">
-                            <a href="{{ url('/horario_clases') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Horario_clases</a> 
+                            <a href="{{ url('/clases') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Clases</a>
                         </li>
 						<li class="nav-item">
-                            <a href="{{ url('/disiplinas') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Disiplinas</a> 
+                            <a href="{{ url('/hclases') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Horario de clases</a>
                         </li>
 						<li class="nav-item">
-                            <a href="{{ url('/clases') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Clases</a> 
+                            <a href="{{ url('/alumnos') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Alumnos</a>
                         </li>
 						<li class="nav-item">
-                            <a href="{{ url('/asistencias') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Asistencias</a> 
-                        </li>
-						<li class="nav-item">
-                            <a href="{{ url('/alumnos') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Alumnos</a> 
+                            <a href="{{ url('/disiplinas') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Disiplinas</a>
                         </li>
                     </ul>
 					@endauth()

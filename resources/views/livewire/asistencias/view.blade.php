@@ -42,9 +42,9 @@
 							@foreach($asistencias as $row)
 							<tr>
 								<td>{{ $loop->iteration }}</td> 
-								<td>{{ $row->id_Clase }}</td>
-								<td>{{ $row->id_Alumno }}</td>
-								<td>{{ $row->id_Maestro }}</td>
+								<td>{{ $row->id_clase }}</td>
+								<td>{{ $row->id_alumno }}</td>
+								<td>{{ $row->id_maestro }}</td>
 								<td width="90">
 								<div class="btn-group">
 									<button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

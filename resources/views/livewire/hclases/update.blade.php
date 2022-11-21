@@ -3,7 +3,7 @@
     <div class="modal-dialog" role="document">
        <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="updateModalLabel">Update Asistencia</h5>
+                <h5 class="modal-title" id="updateModalLabel">Update Hclase</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span wire:click.prevent="cancel()" aria-hidden="true">×</span>
                 </button>
@@ -12,16 +12,16 @@
                 <form>
 					<input type="hidden" wire:model="selected_id">
             <div class="form-group">
-                <label for="id_clase"></label>
-                <input wire:model="id_clase" type="text" class="form-control" id="id_clase" placeholder="Id Clase">@error('id_clase') <span class="error text-danger">{{ $message }}</span> @enderror
+                <label for="DiaSemana"></label>
+                <input wire:model="DiaSemana" type="text" class="form-control" id="DiaSemana" placeholder="Diasemana">@error('DiaSemana') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
-                <label for="id_alumno"></label>
-                <input wire:model="id_alumno" type="text" class="form-control" id="id_alumno" placeholder="Id Alumno">@error('id_alumno') <span class="error text-danger">{{ $message }}</span> @enderror
+                <label for="HoraDeInicio"></label>
+                <input wire:model="HoraDeInicio" type="text" class="form-control" id="HoraDeInicio" placeholder="Horadeinicio">@error('HoraDeInicio') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
-                <label for="id_maestro"></label>
-                <input wire:model="id_maestro" type="text" class="form-control" id="id_maestro" placeholder="Id Maestro">@error('id_maestro') <span class="error text-danger">{{ $message }}</span> @enderror
+                <label for="HoraFin"></label>
+                <input wire:model="HoraFin" type="text" class="form-control" id="HoraFin" placeholder="Horafin">@error('HoraFin') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
 
                 </form>

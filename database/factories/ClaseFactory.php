@@ -14,10 +14,10 @@ class ClaseFactory extends Factory
     {
         return [
 			'HoraSemana' => $this->faker->name,
-			'id_Maestro' => $this->faker->name,
-			'id_Alumno' => $this->faker->name,
-			'id_HorarioClase' => $this->faker->name,
-			'id_Asistencia' => $this->faker->name,
+			'id_maestro' => $this->faker->name,
+			'id_alumno' => $this->faker->name,
+			'id_hclase' => $this->faker->name,
+			'id_asistencia' => $this->faker->name,
         ];
     }
 }

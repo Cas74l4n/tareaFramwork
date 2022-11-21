@@ -20,12 +20,12 @@
                 <input wire:model="Celular" type="text" class="form-control" id="Celular" placeholder="Celular">@error('Celular') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
-                <label for="id_Disiplina"></label>
-                <input wire:model="id_Disiplina" type="text" class="form-control" id="id_Disiplina" placeholder="Id Disiplina">@error('id_Disiplina') <span class="error text-danger">{{ $message }}</span> @enderror
+                <label for="id_disiplina"></label>
+                <input wire:model="id_disiplina" type="text" class="form-control" id="id_disiplina" placeholder="Id Disiplina">@error('id_disiplina') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
             <div class="form-group">
-                <label for="id_HorarioTrabajo"></label>
-                <input wire:model="id_HorarioTrabajo" type="text" class="form-control" id="id_HorarioTrabajo" placeholder="Id Horariotrabajo">@error('id_HorarioTrabajo') <span class="error text-danger">{{ $message }}</span> @enderror
+                <label for="id_htrabajo"></label>
+                <input wire:model="id_htrabajo" type="text" class="form-control" id="id_htrabajo" placeholder="Id Horario Trabajo">@error('id_htrabajo') <span class="error text-danger">{{ $message }}</span> @enderror
             </div>
 
                 </form>
